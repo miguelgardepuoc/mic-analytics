@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   application:
     name: mic-analytics
@@ -7,7 +7,7 @@ spring:
     servlet:
       path: /analytics
   datasource:
-    url: jdbc:postgresql://localhost:5432/ANALYTICS
+    url: jdbc:postgresql://localhost:55433/ANALYTICS
     username: myuser
     password: mypassword
     driver-class-name: org.postgresql.Driver
@@ -32,11 +32,13 @@ spring:
     broker-url: ${SPRING_JMS_BROKER_URL}
     user: ${SPRING_JMS_USER}
     password: ${SPRING_JMS_PASSWORD}
-producer:
+consumer:
   event:
-    host: ${PRODUCER_ARTEMIS_HOST:localhost}
-    port: ${PRODUCER_ARTEMIS_PORT:61616}
-    user: ${PRODUCER_ARTEMIS_USER:admin}
-    password: ${PRODUCER_ARTEMIS_PASSWORD:admin}
+    host: ${CONSUMER_ARTEMIS_HOST:localhost}
+    port: ${CONSUMER_ARTEMIS_PORT:61617}
+    user: ${CONSUMER_ARTEMIS_USER:admin}
+    password: ${CONSUMER_ARTEMIS_PASSWORD:admin}
   topic:
-    name: ${PRODUCER_TOPIC_NAME:test-topic}
+    name: ${CONSUMER_TOPIC_NAME:test-topic}
+  subscription:
+    name: ${CONSUMER_SUBSCRIPTION_NAME:my-subscription}

@@ -1,8 +1,5 @@
 package com.antharos.analytics.infrastructure.in.controller;
 
-import com.antharos.analytics.domain.globalexceptions.AlreadyExistsException;
-import com.antharos.analytics.domain.globalexceptions.ConflictException;
-import com.antharos.analytics.domain.globalexceptions.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,21 +10,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-  @ExceptionHandler({IllegalArgumentException.class, NotFoundException.class})
+  @ExceptionHandler({IllegalArgumentException.class})
   public ResponseEntity<String> handleIllegalArgumentException(RuntimeException ex) {
     log.error("IllegalArgumentException thrown: ", ex);
     return new ResponseEntity<>("Invalid request data: " + ex.getMessage(), HttpStatus.BAD_REQUEST);
-  }
-
-  @ExceptionHandler(AlreadyExistsException.class)
-  public ResponseEntity<String> handleAlreadyExistsException(AlreadyExistsException ex) {
-    log.warn("Resource already exists exception thrown: ", ex);
-    return new ResponseEntity<>("Resource already exists: " + ex.getMessage(), HttpStatus.CONFLICT);
-  }
-
-  @ExceptionHandler(ConflictException.class)
-  public ResponseEntity<String> handleConflictException(ConflictException ex) {
-    log.warn("Conflict exception thrown: ", ex);
-    return new ResponseEntity<>("Conflict: " + ex.getMessage(), HttpStatus.CONFLICT);
   }
 }

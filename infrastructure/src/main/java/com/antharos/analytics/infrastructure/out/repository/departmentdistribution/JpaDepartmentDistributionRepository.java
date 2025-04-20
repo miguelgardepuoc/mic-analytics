@@ -3,5 +3,5 @@ package com.antharos.analytics.infrastructure.out.repository.departmentdistribut
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DepartmentDistributionRepository
+public interface JpaDepartmentDistributionRepository
     extends JpaRepository<DepartmentDistributionEntity, UUID> {}

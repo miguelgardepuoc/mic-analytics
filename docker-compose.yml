@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: ANALYTICS
     ports:
-      - "5432:5432"
+      - "55433:5432"
     volumes:
       - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     networks:
@@ -18,8 +18,8 @@ services:
     image: apache/activemq-artemis:latest
     container_name: activemq-artemis-analytics
     ports:
-      - "61616:61616"  # Puerto JMS
-      - "8161:8161"    # Consola web
+      - "6617:61617"  # Puerto JMS
+      - "65534:8161"    # Consola web
     environment:
       ARTEMIS_USER: admin
       ARTEMIS_PASSWORD: admin
