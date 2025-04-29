@@ -1,6 +1,7 @@
 package com.antharos.analytics.infrastructure.in.controller;
 
 import com.antharos.analytics.domain.*;
+import com.antharos.analytics.domain.service.ReportService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

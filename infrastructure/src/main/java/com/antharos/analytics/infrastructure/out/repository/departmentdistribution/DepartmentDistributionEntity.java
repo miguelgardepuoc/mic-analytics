@@ -4,9 +4,12 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 @Entity
 @Table(name = "department_distribution")
@@ -18,5 +21,5 @@ public class DepartmentDistributionEntity {
   private Long totalEmployees;
 
   @Column(name = "total_salary")
-  private Long totalSalary;
+  private BigDecimal totalSalary;
 }

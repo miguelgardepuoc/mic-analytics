@@ -1,6 +1,8 @@
-package com.antharos.analytics.infrastructure.out.event;
+package com.antharos.analytics.infrastructure.in.event;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.antharos.analytics.application.EmployeeEventDispatcherService;
+import com.antharos.analytics.domain.EmployeeEvent;
+import com.antharos.analytics.infrastructure.in.event.model.EventMapper;
 import jakarta.jms.MessageListener;
 import jakarta.jms.TextMessage;
 import lombok.AllArgsConstructor;
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageConsumerImpl implements MessageListener {
 
-  private final ObjectMapper objectMapper;
+  private final EmployeeEventDispatcherService eventDispatcherService;
 
   @Override
   @JmsListener(
@@ -28,12 +30,13 @@ public class MessageConsumerImpl implements MessageListener {
   }
 
   private void processMessage(TextMessage textMessage) {
-    String messageText = null;
     try {
-      messageText = textMessage.getText();
+      String messageText = textMessage.getText();
       log.info("Processing message: {}", messageText);
+      EmployeeEvent employeeEvent = EventMapper.mapToEmployeeEvent(messageText);
+      this.eventDispatcherService.processEvent(employeeEvent);
     } catch (Exception e) {
-      log.error("Error processing message: {}", messageText, e);
+      log.error("Error processing message", e);
     }
   }
 }

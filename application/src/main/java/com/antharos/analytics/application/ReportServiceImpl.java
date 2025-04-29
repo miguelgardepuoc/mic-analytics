@@ -5,6 +5,7 @@ import com.antharos.analytics.domain.repository.DepartmentDistributionRepository
 import com.antharos.analytics.domain.repository.EmployeeKpiRepository;
 import com.antharos.analytics.domain.repository.ItDistributionRepository;
 import com.antharos.analytics.domain.repository.MonthKpiRepository;
+import com.antharos.analytics.domain.service.ReportService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

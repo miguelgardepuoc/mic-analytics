@@ -1,5 +1,6 @@
-package com.antharos.analytics.domain;
+package com.antharos.analytics.domain.service;
 
+import com.antharos.analytics.domain.*;
 import java.util.List;
 
 public interface ReportService {

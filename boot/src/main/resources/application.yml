@@ -22,7 +22,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
+    #show-sql: true
     format_sql: true
     properties:
       hibernate:
@@ -35,10 +35,10 @@ spring:
 consumer:
   event:
     host: ${CONSUMER_ARTEMIS_HOST:localhost}
-    port: ${CONSUMER_ARTEMIS_PORT:61617}
+    port: ${CONSUMER_ARTEMIS_PORT:6616}
     user: ${CONSUMER_ARTEMIS_USER:admin}
     password: ${CONSUMER_ARTEMIS_PASSWORD:admin}
   topic:
-    name: ${CONSUMER_TOPIC_NAME:test-topic}
+    name: ${CONSUMER_TOPIC_NAME:corporate-organization.employee}
   subscription:
-    name: ${CONSUMER_SUBSCRIPTION_NAME:my-subscription}
+    name: ${CONSUMER_SUBSCRIPTION_NAME:analytics}

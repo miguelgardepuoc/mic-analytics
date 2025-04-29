@@ -2,9 +2,10 @@ package com.antharos.analytics.infrastructure.out.repository.employeekpi;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.UUID;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 @Entity
 @Table(name = "employee_kpi")
@@ -12,8 +13,6 @@ import lombok.Getter;
 public class EmployeeKpiEntity {
 
   @Id private LocalDate month;
-
-  @Id private UUID status;
 
   @Column(name = "total_employees", nullable = false)
   private Long totalEmployees;
