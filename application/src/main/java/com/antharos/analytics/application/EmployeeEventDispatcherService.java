@@ -5,7 +5,6 @@ import com.antharos.analytics.domain.EmployeeEvent;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
@@ -16,7 +15,6 @@ public class EmployeeEventDispatcherService {
     this.eventHandlers = eventHandlers;
   }
 
-  @Transactional
   public void processEvent(EmployeeEvent event) {
     log.info("Dispatching employee event: {}", event.getEventType());
 

@@ -8,7 +8,6 @@ import com.antharos.analytics.domain.service.MaterializeKpiForNewMonthUseCase;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @AllArgsConstructor
 @Service
@@ -18,7 +17,6 @@ public class MaterializeKpiForNewMonthService implements MaterializeKpiForNewMon
   private final EmployeeKpiRepository employeeKpiRepository;
 
   @Override
-  @Transactional
   public void execute(LocalDate newMonth) {
     LocalDate previousMonth = newMonth.minusMonths(1);
 
