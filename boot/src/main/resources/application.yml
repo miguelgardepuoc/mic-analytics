@@ -11,7 +11,7 @@ spring:
     servlet:
       path: /analytics
   datasource:
-    url: jdbc:postgresql://analytics.postgres.database.azure.com:5432/postgres
+    url: jdbc:postgresql://peopleanalytics.postgres.database.azure.com:5432/analytics
     username: antharosadmin
     password: "@passw0rd"
     driver-class-name: org.postgresql.Driver
