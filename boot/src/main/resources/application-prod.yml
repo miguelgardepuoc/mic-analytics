@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://peopleanalytics.postgres.database.azure.com:5432/postgres
+consumer:
+  event:
+    host: antharos.servicebus.windows.net
+    port: 6616
+    user: RootManageSharedAccessKey
+  topic:
+    name: corporateorganization
+  subscription:
+    name: analytics
