@@ -21,17 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.antharos.analytics</groupId>
-            <artifactId>domain</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.antharos.analytics</groupId>
             <artifactId>application</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.antharos.analytics</groupId>
-            <artifactId>infrastructure</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
