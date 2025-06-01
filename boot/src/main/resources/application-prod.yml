@@ -10,3 +10,6 @@ consumer:
     name: corporateorganization
   subscription:
     name: analytics
+security:
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
