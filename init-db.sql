@@ -24,14 +24,16 @@ INSERT INTO month_kpi (month, total_salary) VALUES
 ('2025-02-01', 400000),
 ('2025-03-01', 500000),
 ('2025-04-01', 800000),
-('2025-05-01', 1555000);
+('2025-05-01', 1555000),
+('2025-06-01', 1555000);
 
 INSERT INTO employee_kpi (month, total_employees) VALUES
 ('2025-01-01', 5),
 ('2025-02-01', 10),
 ('2025-03-01', 9),
 ('2025-04-01', 15),
-('2025-05-01', 30);
+('2025-05-01', 30),
+('2025-06-01', 30);
 
 INSERT INTO department_distribution (department_id, total_employees, total_salary) VALUES
 ('a4a77bc5-e352-4ac0-8ec3-d3af8271f61f', 21, 1260000), -- IT Department
